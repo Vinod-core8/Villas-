@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Performance Marketing Portfolio — Vista Villas, Bellandur</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#10192A;
+    --ink-soft:#2B3547;
+    --gold:#B8873B;
+    --gold-soft:#D9B876;
+    --olive:#5F6B4C;
+    --stone:#EAE6DA;
+    --stone-line:#D8D2C1;
+    --paper:#F6F4EE;
+    --white:#FFFFFF;
+    --radius:2px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
+  }
+  h1,h2,h3,h4{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    letter-spacing:-0.01em;
+    color:var(--ink);
+  }
+  .mono{ font-family:'JetBrains Mono', monospace; }
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--gold);
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:18px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:20px; height:1px;
+    background:var(--gold);
+    display:inline-block;
+  }
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .wrap{
+    max-width:1160px;
+    margin:0 auto;
+    padding:0 40px;
+  }
+  section{padding:120px 0;}
+  @media (max-width:720px){
+    section{padding:76px 0;}
+    .wrap{padding:0 22px;}
+  }
+
+  /* ---------- NAV ---------- */
+  header.nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(246,244,238,0.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--stone-line);
+  }
+  .nav-inner{
+    max-width:1160px; margin:0 auto; padding:20px 40px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .brand{
+    font-family:'Fraunces', serif;
+    font-size:18px;
+    letter-spacing:0.02em;
+  }
+  .brand span{color:var(--gold);}
+  nav.links{display:flex; gap:34px;}
+  nav.links a{
+    font-size:13px;
+    letter-spacing:0.03em;
+    color:var(--ink-soft);
+    font-weight:500;
+    transition:color 0.2s ease;
+  }
+  nav.links a:hover{color:var(--gold);}
+  .nav-cta{
+    font-size:13px; font-weight:600;
+    padding:10px 20px;
+    border:1px solid var(--ink);
+    border-radius:var(--radius);
+    transition: all 0.2s ease;
+  }
+  .nav-cta:hover{background:var(--ink); color:var(--paper);}
+  @media (max-width:860px){
+    nav.links{display:none;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    padding:150px 0 110px;
+    overflow:hidden;
+    background:var(--ink);
+    color:var(--paper);
+  }
+  .blueprint{
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size:56px 56px;
+    mask-image:radial-gradient(ellipse 80% 60% at 70% 30%, black 10%, transparent 75%);
+  }
+  .hero .wrap{position:relative; z-index:2;}
+  .hero-tag{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--gold-soft);
+    border:1px solid rgba(217,184,118,0.35);
+    display:inline-flex;
+    padding:7px 14px;
+    border-radius:20px;
+    margin-bottom:34px;
+  }
+  .hero h1{
+    color:var(--paper);
+    font-size:clamp(38px, 5.4vw, 68px);
+    line-height:1.06;
+    max-width:850px;
+    font-weight:500;
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--gold-soft);
+  }
+  .hero p.lead{
+    margin-top:26px;
+    max-width:560px;
+    font-size:17px;
+    color:rgba(246,244,238,0.72);
+  }
+  .hero-actions{
+    margin-top:44px;
+    display:flex; gap:16px; flex-wrap:wrap;
+  }
+  .btn-primary{
+    background:var(--gold);
+    color:var(--ink);
+    font-weight:600;
+    font-size:14px;
+    padding:15px 28px;
+    border-radius:var(--radius);
+    transition:background 0.2s ease, transform 0.2s ease;
+    display:inline-block;
+  }
+  .btn-primary:hover{background:var(--gold-soft); transform:translateY(-1px);}
+  .btn-ghost{
+    border:1px solid rgba(246,244,238,0.3);
+    color:var(--paper);
+    font-weight:600;
+    font-size:14px;
+    padding:15px 28px;
+    border-radius:var(--radius);
+    transition:border-color 0.2s ease;
+  }
+  .btn-ghost:hover{border-color:var(--gold-soft); color:var(--gold-soft);}
+
+  .hero-stats{
+    margin-top:86px;
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    border-top:1px solid rgba(246,244,238,0.14);
+    padding-top:34px;
+    gap:24px;
+  }
+  .hero-stats .stat .num{
+    font-family:'JetBrains Mono', monospace;
+    font-size:26px;
+    color:var(--gold-soft);
+    font-weight:600;
+  }
+  .hero-stats .stat .lbl{
+    font-size:12.5px;
+    color:rgba(246,244,238,0.55);
+    margin-top:6px;
+  }
+  @media (max-width:760px){
+    .hero-stats{grid-template-columns:repeat(2,1fr); row-gap:26px;}
+  }
+
+  /* ---------- WHAT WE DO ---------- */
+  .section-head{
+    max-width:640px;
+    margin-bottom:64px;
+  }
+  .section-head h2{
+    font-size:clamp(28px, 3.4vw, 40px);
+  }
+  .pillars{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:1px;
+    background:var(--stone-line);
+    border:1px solid var(--stone-line);
+  }
+  .pillar{
+    background:var(--paper);
+    padding:36px 28px;
+  }
+  .pillar .n{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12.5px;
+    color:var(--gold);
+    margin-bottom:22px;
+  }
+  .pillar h3{font-size:19px; margin-bottom:12px;}
+  .pillar p{font-size:14.5px; color:var(--ink-soft);}
+  @media (max-width:900px){
+    .pillars{grid-template-columns:repeat(2, 1fr);}
+  }
+  @media (max-width:560px){
+    .pillars{grid-template-columns:1fr;}
+  }
+
+  /* ---------- CASE STUDY ---------- */
+  .case{
+    background:var(--ink);
+    color:var(--paper);
+  }
+  .case .section-head h2{color:var(--paper);}
+  .case-grid{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:70px;
+    align-items:start;
+  }
+  .case-copy p{color:rgba(246,244,238,0.68); font-size:15.5px; margin-bottom:22px; max-width:460px;}
+  .channel-list{list-style:none; margin-top:28px;}
+  .channel-list li{
+    display:flex; gap:16px;
+    padding:16px 0;
+    border-top:1px solid rgba(246,244,238,0.12);
+    font-size:14.5px;
+    color:rgba(246,244,238,0.85);
+  }
+  .channel-list li:last-child{border-bottom:1px solid rgba(246,244,238,0.12);}
+  .channel-list .dot{
+    width:6px; height:6px; border-radius:50%;
+    background:var(--gold-soft);
+    margin-top:8px; flex-shrink:0;
+  }
+  .cpl-card{
+    background:linear-gradient(160deg, #1B2740, #10192A);
+    border:1px solid rgba(217,184,118,0.25);
+    padding:48px 40px;
+    border-radius:6px;
+  }
+  .cpl-card .eyebrow{color:var(--gold-soft);}
+  .cpl-card .eyebrow::before{background:var(--gold-soft);}
+  .cpl-figure{
+    font-family:'JetBrains Mono', monospace;
+    font-size:46px;
+    color:var(--gold-soft);
+    font-weight:600;
+    letter-spacing:-0.02em;
+  }
+  .cpl-card p{
+    margin-top:18px;
+    color:rgba(246,244,238,0.65);
+    font-size:14.5px;
+  }
+  @media (max-width:860px){
+    .case-grid{grid-template-columns:1fr;}
+  }
+
+  /* ---------- PHILOSOPHY ---------- */
+  .philosophy p.intro{
+    max-width:620px;
+    color:var(--ink-soft);
+    font-size:15.5px;
+    margin-bottom:56px;
+  }
+  table.compare{
+    width:100%;
+    border-collapse:collapse;
+  }
+  table.compare th, table.compare td{
+    padding:20px 22px;
+    text-align:left;
+    font-size:14.5px;
+    border-bottom:1px solid var(--stone-line);
+  }
+  table.compare th{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    font-weight:600;
+  }
+  table.compare td:first-child{
+    font-weight:600;
+    color:var(--ink);
+    width:20%;
+  }
+  table.compare td.typical{color:#8A8272;}
+  table.compare td.ours{color:var(--olive); font-weight:500;}
+  @media (max-width:700px){
+    table.compare, table.compare thead, table.compare tbody, table.compare th, table.compare td, table.compare tr{display:block;}
+    table.compare thead{display:none;}
+    table.compare tr{border-bottom:1px solid var(--stone-line); padding:18px 0;}
+    table.compare td{border:none; padding:6px 0;}
+    table.compare td:first-child{color:var(--gold);}
+    table.compare td.typical::before{content:"Typical approach: "; color:#8A8272; font-weight:400;}
+    table.compare td.ours::before{content:"Our approach: "; color:var(--olive); font-weight:400;}
+  }
+
+  /* ---------- BUDGET / INVESTMENT PLAN ---------- */
+  .budget{
+    background:var(--stone);
+    border-top:1px solid var(--stone-line);
+    border-bottom:1px solid var(--stone-line);
+  }
+  .budget-top{
+    display:grid;
+    grid-template-columns:0.9fr 1.1fr;
+    gap:70px;
+    margin-bottom:70px;
+  }
+  .budget-total{
+    font-family:'JetBrains Mono', monospace;
+    font-size:clamp(40px,6vw,64px);
+    font-weight:600;
+    color:var(--ink);
+    line-height:1;
+  }
+  .budget-total sup{font-size:0.4em; top:-0.6em; color:var(--gold);}
+  .budget-total .per{
+    display:block;
+    font-family:'Inter', sans-serif;
+    font-size:13px;
+    color:var(--ink-soft);
+    font-weight:500;
+    margin-top:10px;
+    letter-spacing:0.02em;
+  }
+  .budget-note{
+    margin-top:26px;
+    font-size:14.5px;
+    color:var(--ink-soft);
+    max-width:420px;
+  }
+
+  /* floor-plan style allocation bar */
+  .plan-bar{
+    display:flex;
+    width:100%;
+    height:120px;
+    border:1px solid var(--ink);
+    background:var(--paper);
+  }
+  .plan-room{
+    position:relative;
+    display:flex; flex-direction:column; justify-content:flex-end;
+    padding:16px;
+    border-right:1px solid var(--ink);
+  }
+  .plan-room:last-child{border-right:none;}
+  .plan-room.meta{background:#DDE3D4; flex-basis:25%;}
+  .plan-room.google{background:#EFE2C4; flex-basis:7%;}
+  .plan-room.landing{background:#E4D9E8; flex-basis:68%;}
+  .plan-room .pct{
+    font-family:'JetBrains Mono', monospace;
+    font-size:22px;
+    font-weight:600;
+    color:var(--ink);
+  }
+  .plan-room .lbl{
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:0.03em;
+    color:var(--ink-soft);
+    margin-top:2px;
+  }
+  .plan-legend{
+    display:flex; gap:28px; margin-top:18px; flex-wrap:wrap;
+    font-size:13px; color:var(--ink-soft);
+  }
+  .plan-legend .item{display:flex; align-items:center; gap:8px;}
+  .plan-legend .sw{width:10px; height:10px; border-radius:2px;}
+  .sw.meta{background:#8FA477;}
+  .sw.google{background:#C9A227;}
+  .sw.landing{background:#A987B3;}
+
+  .budget-cards{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:var(--stone-line);
+    border:1px solid var(--stone-line);
+  }
+  .bcard{
+    background:var(--paper);
+    padding:34px 28px;
+  }
+  .bcard .eyebrow{margin-bottom:14px;}
+  .bcard .amt{
+    font-family:'JetBrains Mono', monospace;
+    font-size:26px;
+    font-weight:600;
+    color:var(--ink);
+  }
+  .bcard p{font-size:13.8px; color:var(--ink-soft); margin-top:14px;}
+  .bcard ul{margin-top:14px; padding-left:18px; font-size:13.5px; color:var(--ink-soft);}
+  .bcard li{margin-bottom:6px;}
+
+  .landing-strip{
+    margin-top:1px;
+    background:var(--ink);
+    color:var(--paper);
+    padding:38px 40px;
+    display:flex;
+    gap:28px;
+    align-items:flex-start;
+    border:1px solid var(--stone-line);
+    border-top:none;
+  }
+  .landing-strip .mark{
+    font-family:'JetBrains Mono', monospace;
+    color:var(--gold-soft);
+    font-size:13px;
+    padding-top:2px;
+  }
+  .landing-strip h4{color:var(--paper); font-size:16.5px; margin-bottom:8px;}
+  .landing-strip p{font-size:14px; color:rgba(246,244,238,0.68); max-width:640px;}
+
+  .yield-row{
+    margin-top:56px;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:24px;
+    border-top:1px solid var(--stone-line);
+    padding-top:36px;
+  }
+  .yield-row .y-stat .num{
+    font-family:'JetBrains Mono', monospace;
+    font-size:24px;
+    font-weight:600;
+    color:var(--olive);
+  }
+  .yield-row .y-stat .lbl{font-size:12.5px; color:var(--ink-soft); margin-top:6px;}
+
+  @media (max-width:860px){
+    .budget-top{grid-template-columns:1fr;}
+    .budget-cards{grid-template-columns:1fr;}
+    .landing-strip{flex-direction:column;}
+  }
+
+  /* ---------- INFLUENCER ---------- */
+  .steps3{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:44px;
+  }
+  .step3 .n{
+    font-family:'JetBrains Mono', monospace;
+    color:var(--gold);
+    font-size:13px;
+    margin-bottom:16px;
+  }
+  .step3 h3{font-size:19px; margin-bottom:12px;}
+  .step3 p{font-size:14.5px; color:var(--ink-soft);}
+  @media (max-width:820px){ .steps3{grid-template-columns:1fr;} }
+
+  /* ---------- PROCESS ---------- */
+  .timeline{
+    position:relative;
+    display:grid;
+    grid-template-columns:repeat(5, 1fr);
+    gap:0;
+    margin-top:20px;
+  }
+  .tl-item{
+    padding:28px 20px 0 0;
+    border-top:2px solid var(--stone-line);
+    position:relative;
+  }
+  .tl-item::before{
+    content:"";
+    position:absolute; top:-2px; left:0;
+    width:34px; height:2px;
+    background:var(--gold);
+  }
+  .tl-item .n{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px; color:var(--gold); margin-bottom:14px;
+  }
+  .tl-item h4{font-size:16px; margin-bottom:10px; line-height:1.3;}
+  .tl-item p{font-size:13.5px; color:var(--ink-soft);}
+  @media (max-width:900px){
+    .timeline{grid-template-columns:1fr 1fr; gap:36px 24px;}
+  }
+  @media (max-width:560px){
+    .timeline{grid-template-columns:1fr; gap:30px;}
+  }
+
+  /* ---------- WHY PARTNER ---------- */
+  .why-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:1px;
+    background:var(--stone-line);
+    border:1px solid var(--stone-line);
+  }
+  .why-item{
+    background:var(--paper);
+    padding:40px;
+    display:flex; gap:20px;
+  }
+  .why-item .badge{
+    width:36px; height:36px;
+    border:1px solid var(--gold);
+    border-radius:50%;
+    flex-shrink:0;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'JetBrains Mono', monospace;
+    color:var(--gold);
+    font-size:13px;
+  }
+  .why-item h3{font-size:17.5px; margin-bottom:10px;}
+  .why-item p{font-size:14px; color:var(--ink-soft);}
+  @media (max-width:700px){ .why-grid{grid-template-columns:1fr;} }
+
+  /* ---------- ADD-ONS (what can be added) ---------- */
+  .addons{
+    background:var(--stone);
+    border-top:1px solid var(--stone-line);
+    border-bottom:1px solid var(--stone-line);
+  }
+  .addon-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:var(--stone-line);
+    border:1px solid var(--stone-line);
+  }
+  .addon{
+    background:var(--paper);
+    padding:30px 26px;
+  }
+  .addon h4{font-size:15.5px; margin-bottom:8px;}
+  .addon p{font-size:13.3px; color:var(--ink-soft);}
+  .addon .tag{
+    display:inline-block;
+    font-family:'JetBrains Mono', monospace;
+    font-size:10.5px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--olive);
+    border:1px solid var(--olive);
+    padding:3px 8px;
+    border-radius:12px;
+    margin-bottom:14px;
+  }
+  @media (max-width:900px){ .addon-grid{grid-template-columns:1fr 1fr;} }
+  @media (max-width:560px){ .addon-grid{grid-template-columns:1fr;} }
+
+  /* ---------- CONTACT ---------- */
+  .contact{
+    background:var(--ink);
+    color:var(--paper);
+    text-align:center;
+    padding:130px 0;
+  }
+  .contact h2{
+    color:var(--paper);
+    font-size:clamp(30px, 4.4vw, 48px);
+    max-width:720px;
+    margin:0 auto;
+  }
+  .contact p.lead{
+    max-width:520px;
+    margin:24px auto 0;
+    color:rgba(246,244,238,0.65);
+    font-size:15.5px;
+  }
+  .contact-methods{
+    margin-top:50px;
+    display:flex;
+    justify-content:center;
+    gap:56px;
+    flex-wrap:wrap;
+  }
+  .cmethod .lbl{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11.5px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--gold-soft);
+    margin-bottom:8px;
+  }
+  .cmethod .val{font-size:15.5px; color:rgba(246,244,238,0.9);}
+  .contact .btn-primary{margin-top:50px;}
+
+  footer{
+    background:var(--ink);
+    color:rgba(246,244,238,0.4);
+    font-size:12.5px;
+    text-align:center;
+    padding:26px 0 40px;
+    border-top:1px solid rgba(246,244,238,0.1);
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="brand">CORE8<span>MEDIA</span></div>
+    <nav class="links">
+      <a href="#what-we-do">What We Do</a>
+      <a href="#case-study">Case Study</a>
+      <a href="#investment">Investment Plan</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="nav-cta">Book a Call</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blueprint"></div>
+  <div class="wrap">
+    <div class="hero-tag">Vista Villas, Bellandur — Performance Marketing Portfolio</div>
+    <h1>Turning Villa Listings into <em>Qualified Buyers</em></h1>
+    <p class="lead">A performance-first approach to lead generation for premium villas and real estate developments — built on the results delivered for Vista Villas, Bellandur.</p>
+    <div class="hero-actions">
+      <a href="#investment" class="btn-primary">See the Monthly Investment Plan</a>
+      <a href="#case-study" class="btn-ghost">View Case Study</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="num">₹150–₹250</div>
+        <div class="lbl">Cost per qualified lead</div>
+      </div>
+      <div class="stat">
+        <div class="num">₹29,800</div>
+        <div class="lbl">Performance marketing ad spend</div>
+      </div>
+      <div class="stat">
+        <div class="num">2 Channels</div>
+        <div class="lbl">Meta &amp; Google Ads</div>
+      </div>
+      <div class="stat">
+        <div class="num">1 Landing Page</div>
+        <div class="lbl">Built &amp; hosted for Google Ads</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE DO -->
+<section id="what-we-do">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">What We Do</div>
+      <h2>A Full-Funnel Marketing Engine for Real Estate</h2>
+    </div>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="n">01</div>
+        <h3>Performance Marketing</h3>
+        <p>Paid campaigns engineered around lead quality — not just volume — so every rupee spent moves a real buyer closer to a site visit.</p>
+      </div>
+      <div class="pillar">
+        <div class="n">02</div>
+        <h3>Influencer Marketing</h3>
+        <p>A curated shortlist of real-estate and property-category influencers, matched to each project and shared for developer approval.</p>
+      </div>
+      <div class="pillar">
+        <div class="n">03</div>
+        <h3>Social Media Marketing</h3>
+        <p>Always-on organic and paid presence across platforms to keep a project visible through the full buyer consideration cycle.</p>
+      </div>
+      <div class="pillar">
+        <div class="n">04</div>
+        <h3>Brand Visibility</h3>
+        <p>Positioning that builds trust in the developer and the project long before a prospect ever fills out a lead form.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDY -->
+<section id="case-study" class="case">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Case Study</div>
+      <h2>Vista Villas, Bellandur</h2>
+    </div>
+    <div class="case-grid">
+      <div class="case-copy">
+        <p>Premium villa project, Bellandur — performance marketing mandate covering paid lead generation, influencer content, and social visibility.</p>
+        <ul class="channel-list">
+          <li><span class="dot"></span>Meta &amp; Google performance campaigns</li>
+          <li><span class="dot"></span>Landing page + funnel optimisation</li>
+          <li><span class="dot"></span>Always-on retargeting for warm leads</li>
+        </ul>
+      </div>
+      <div class="cpl-card">
+        <div class="eyebrow">Cost Per Qualified Lead</div>
+        <div class="cpl-figure">₹150–250</div>
+        <p>Held consistently across the campaign — giving the developer a predictable, scalable cost of acquisition for a high-ticket, long-consideration product.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Our Philosophy</div>
+      <h2>Villas Aren't Sold on Volume. They're Sold on Fit.</h2>
+    </div>
+    <p class="intro">A ₹2.5 Cr+ villa is a considered, high-trust purchase. Cheap, unqualified leads waste a sales team's time and inflate cost-per-sale even when cost-per-lead looks low. We optimise for the metric that actually predicts a site visit and a closed deal.</p>
+    <table class="compare">
+      <thead>
+        <tr><th></th><th>Typical Approach</th><th>Our Approach</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Targeting</td><td class="typical">Broad reach, maximum clicks</td><td class="ours">Intent signals matched to villa-buyer profiles</td></tr>
+        <tr><td>Creative</td><td class="typical">Generic property ads</td><td class="ours">Influencer walkthroughs &amp; lifestyle-led content</td></tr>
+        <tr><td>Optimisation Goal</td><td class="typical">Lowest cost-per-click</td><td class="ours">Lowest cost-per-qualified-lead (₹150–250)</td></tr>
+        <tr><td>Funnel</td><td class="typical">One-size-fits-all form</td><td class="ours">Pre-qualifying landing pages &amp; follow-up flow</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- INVESTMENT / BUDGET PLAN -->
+<section id="investment" class="budget">
+  <div class="wrap">
+    <div class="budget-top">
+      <div>
+        <div class="eyebrow">Monthly Investment Plan</div>
+        <h2 style="font-size:clamp(26px,3.2vw,36px); margin-bottom:8px;">Where the Monthly Investment Goes</h2>
+        <div class="budget-total" style="margin-top:24px; font-size:clamp(30px,4.4vw,48px);">₹1,12,800 – ₹1,22,800<span class="per">Combined monthly investment across Performance Marketing, Influencer Marketing &amp; Social Media Marketing</span></div>
+        <p class="budget-note">Three streams run in parallel — paid lead generation, influencer content, and always-on social — each scoped and costed separately below so every rupee is accounted for.</p>
+      </div>
+      <div>
+        <div class="plan-bar">
+          <div class="plan-room meta">
+            <div class="pct">25%</div>
+            <div class="lbl">Performance Marketing</div>
+          </div>
+          <div class="plan-room google">
+            <div class="pct">7%</div>
+            <div class="lbl">Influencer Marketing</div>
+          </div>
+          <div class="plan-room landing">
+            <div class="pct">68%</div>
+            <div class="lbl">Social Media Marketing</div>
+          </div>
+        </div>
+        <div class="plan-legend">
+          <div class="item"><span class="sw meta"></span>Performance Marketing — ₹29,800</div>
+          <div class="item"><span class="sw google"></span>Influencer Marketing — ₹8,000</div>
+          <div class="item"><span class="sw landing"></span>Social Media Marketing — ₹75,000–₹85,000</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="budget-cards">
+      <div class="bcard">
+        <div class="eyebrow">Performance Marketing · ₹29,800/mo</div>
+        <div class="amt">Meta + Google Ads</div>
+        <ul>
+          <li>Meta Ads — ₹16,390 (55%): Instagram &amp; Facebook lead-gen campaigns, retargeting, lookalike audiences</li>
+          <li>Google Ads — ₹10,430 (35%): Search + Performance Max on high-intent "villas in Bellandur" terms</li>
+          <li>Landing page build + hosting — ₹2,980 (10%)</li>
+          <li>Weekly optimisation, transparent CPL reporting</li>
+        </ul>
+      </div>
+      <div class="bcard">
+        <div class="eyebrow">Influencer Marketing · ₹8,000/mo</div>
+        <div class="amt">Curated content partnerships</div>
+        <ul>
+          <li>Curated shortlist of real-estate / property-category influencers</li>
+          <li>1 on-site influencer walkthrough shoot per month, coordinated end-to-end</li>
+          <li>Usage rights for the content across paid &amp; organic channels</li>
+          <li>Content feeds directly into Meta ads and social posting</li>
+        </ul>
+      </div>
+      <div class="bcard">
+        <div class="eyebrow">Social Media Marketing · ₹75,000–₹85,000/mo</div>
+        <div class="amt">Moderate Pack</div>
+        <ul>
+          <li>Reels Creation + SMM — 18 Reels (research, scripting, shooting, pre &amp; post production, posting)</li>
+          <li>Graphic Design — 12 Designs (flyers &amp; banners included; research, designing, posting)</li>
+          <li>Content Reels Shoot — 18 concept videos, high-quality mobile + camera shoot &amp; edit, viral-format content included</li>
+          <li>Platforms: Instagram + Facebook, LinkedIn, GMB management</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="landing-strip">
+      <div class="mark">→</div>
+      <div>
+        <h4>A dedicated landing page will be created and hosted for the Google Ads campaign</h4>
+        <p>Search and Performance Max traffic needs a page built to convert, not a generic project website. We design, build and host a single-property landing page — floor plans, pricing band, gallery and a short enquiry form — optimised specifically for Google Ads quality score and lead capture. It stays live and is updated for the duration of the campaign.</p>
+      </div>
+    </div>
+
+    <div class="yield-row">
+      <div class="y-stat">
+        <div class="num">110–180</div>
+        <div class="lbl">Estimated qualified leads / month at ₹150–250 CPL</div>
+      </div>
+      <div class="y-stat">
+        <div class="num">Weekly</div>
+        <div class="lbl">Optimisation &amp; budget rebalancing cadence</div>
+      </div>
+      <div class="y-stat">
+        <div class="num">48 Hrs</div>
+        <div class="lbl">Turnaround on a channel plan for a new project</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INFLUENCER -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Influencer Marketing</div>
+      <h2>Built for the Real Estate Developer Category</h2>
+    </div>
+    <div class="steps3">
+      <div class="step3">
+        <div class="n">01 / Curated Shortlist</div>
+        <h3>Sourced &amp; vetted</h3>
+        <p>We source and vet influencers within the real estate / property category and share a shortlist for developer sign-off.</p>
+      </div>
+      <div class="step3">
+        <div class="n">02 / On-site Video Content</div>
+        <h3>Shot at the property</h3>
+        <p>Selected influencers walk the property and produce video content — the developer never has to arrange this themselves.</p>
+      </div>
+      <div class="step3">
+        <div class="n">03 / Cross-channel Distribution</div>
+        <h3>One shoot, full funnel</h3>
+        <p>That content feeds paid campaigns, organic social, and landing pages — one shoot, reused across the whole funnel.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">How We Work</div>
+      <h2>From Brief to Booked Site Visit</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="n">Step 1</div>
+        <h4>Discovery &amp; Audit</h4>
+        <p>Understand the project, price point, and buyer profile; audit current lead quality.</p>
+      </div>
+      <div class="tl-item">
+        <div class="n">Step 2</div>
+        <h4>Strategy</h4>
+        <p>Set the channel mix, creative direction, and target CPL for the project.</p>
+      </div>
+      <div class="tl-item">
+        <div class="n">Step 3</div>
+        <h4>Content &amp; Influencer Activation</h4>
+        <p>Produce and secure walkthrough and lifestyle content for the campaign.</p>
+      </div>
+      <div class="tl-item">
+        <div class="n">Step 4</div>
+        <h4>Performance Execution</h4>
+        <p>Launch and manage paid campaigns across Meta, Google, and social — landing page live before spend starts.</p>
+      </div>
+      <div class="tl-item">
+        <div class="n">Step 5</div>
+        <h4>Optimise &amp; Report</h4>
+        <p>Weekly optimisation against CPL and lead-quality targets, with transparent reporting.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY PARTNER -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Why Partner With Us</div>
+      <h2>Real Estate Is All We Do</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="badge">01</div>
+        <div>
+          <h3>Category specialists</h3>
+          <p>Every strategy is built around how villas and premium homes actually get bought — not a generic e-commerce playbook.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="badge">02</div>
+        <div>
+          <h3>Proven CPL discipline</h3>
+          <p>Vista Villas, Bellandur held a ₹150–250 cost-per-qualified-lead — a benchmark we carry into every new project.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="badge">03</div>
+        <div>
+          <h3>End-to-end delivery</h3>
+          <p>Paid performance, influencer sourcing, video content, landing pages and social — one accountable team, not four vendors.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="badge">04</div>
+        <div>
+          <h3>Transparent reporting</h3>
+          <p>Clear, regular visibility into spend, lead volume, CPL, and lead quality — no black-box dashboards.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADD-ONS -->
+<section class="addons">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Where the Budget Can Go Further</div>
+      <h2>What Can Be Added as the Project Scales</h2>
+    </div>
+    <div class="addon-grid">
+      <div class="addon">
+        <span class="tag">Lead Capture</span>
+        <h4>OTP-verified Meta lead forms</h4>
+        <p>Native Meta lead forms with OTP verification built in, so every submission is a real, contactable buyer before it reaches the sales team.</p>
+      </div>
+      <div class="addon">
+        <span class="tag">Targeting</span>
+        <h4>Geo-fencing near competing projects</h4>
+        <p>Serve ads to people physically visiting rival site offices and sample flats nearby.</p>
+      </div>
+      <div class="addon">
+        <span class="tag">Content</span>
+        <h4>Drone &amp; cinematic walkthroughs</h4>
+        <p>Aerial and cinematic footage of the property and neighbourhood, layered on top of influencer content.</p>
+      </div>
+      <div class="addon">
+        <span class="tag">Conversion</span>
+        <h4>A/B tested landing page variants</h4>
+        <p>Run two landing page versions against each other and keep shifting Google traffic to the stronger converter.</p>
+      </div>
+      <div class="addon">
+        <span class="tag">Operations</span>
+        <h4>CRM &amp; lead-tracking integration</h4>
+        <p>Leads pushed directly into the developer's CRM or sales tracker with source and channel tagged.</p>
+      </div>
+      <div class="addon">
+        <span class="tag">Reach</span>
+        <h4>Look-alike audience expansion</h4>
+        <p>Once qualified leads reach volume, build look-alike audiences to extend reach without diluting lead quality.</p>
+      </div>
+      <div class="addon">
+        <span class="tag">Trust</span>
+        <h4>NRI / long-distance buyer track</h4>
+        <p>A separate creative and landing page track for overseas buyers, with time-zone-matched follow-up.</p>
+      </div>
+      <div class="addon">
+        <span class="tag">Sales Enablement</span>
+        <h4>Site-visit scheduling flow</h4>
+        <p>Calendar-linked booking built into the landing page so a qualified lead can lock a site visit slot immediately.</p>
+      </div>
+      <div class="addon">
+        <span class="tag">Visibility</span>
+        <h4>Local SEO for the project name</h4>
+        <p>The landing page is structured to also rank organically for the project's own name and micro-location.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="eyebrow" style="justify-content:center;">Let's Talk</div>
+    <h2>Ready to Generate Qualified Leads for Your Next Project?</h2>
+    <p class="lead">Share your project details and target launch date — we'll put together a channel plan and projected CPL range within 48 hours.</p>
+    <div class="contact-methods">
+      <div class="cmethod">
+        <div class="lbl">Phone</div>
+        <div class="val">[ Phone Number ]</div>
+      </div>
+      <div class="cmethod">
+        <div class="lbl">Email</div>
+        <div class="val">[ Email Address ]</div>
+      </div>
+      <div class="cmethod">
+        <div class="lbl">Website / Instagram</div>
+        <div class="val">[ Website / Instagram ]</div>
+      </div>
+    </div>
+    <a href="#" class="btn-primary">Request a Channel Plan</a>
+  </div>
+</section>
+
+<footer>
+  Vista Villas, Bellandur — Performance Marketing Portfolio · Core8Media
+</footer>
+
+</body>
+</html>
