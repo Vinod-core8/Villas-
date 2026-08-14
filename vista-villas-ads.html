@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vista Villas, Bellandur — Meta &amp; Google Ads | Core8Media</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#12171a;
+    --ink-soft:#1c2327;
+    --paper:#f1f3ee;
+    --paper-dim:#e7e9e2;
+    --brass:#c9a15a;
+    --brass-dim:#a9824a;
+    --green:#2f4a3c;
+    --green-soft:#3f6350;
+    --stone:#6c7472;
+    --white:#ffffff;
+    --line: rgba(18,23,26,0.12);
+    --line-dark: rgba(241,243,238,0.14);
+    --display: 'Fraunces', serif;
+    --body: 'Inter', sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block; max-width:100%;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 32px;}
+  @media(max-width:640px){.wrap{padding:0 20px;}}
+
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:11.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--brass-dim);
+    display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{content:""; width:20px; height:1px; background:var(--brass-dim);}
+
+  h1,h2,h3{font-family:var(--display); font-weight:500; line-height:1.08; letter-spacing:-0.01em;}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(241,243,238,0.88);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    height:68px;
+  }
+  .brand{font-family:var(--mono); font-weight:500; font-size:14px; letter-spacing:0.06em;}
+  .brand span{color:var(--brass-dim);}
+  .navlinks{display:flex; gap:32px; font-size:13.5px; color:var(--stone);}
+  .navlinks a:hover{color:var(--ink);}
+  .navcta{
+    font-family:var(--mono); font-size:12px; letter-spacing:0.04em;
+    padding:9px 16px; border:1px solid var(--ink); border-radius:2px;
+  }
+  .navcta:hover{background:var(--ink); color:var(--paper);}
+  @media(max-width:800px){.navlinks{display:none;}}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative; overflow:hidden;
+    background:var(--ink); color:var(--paper);
+    padding:120px 0 100px;
+  }
+  .hero .blueprint{
+    position:absolute; inset:0; opacity:0.10;
+    background-image:
+      linear-gradient(var(--paper) 1px, transparent 1px),
+      linear-gradient(90deg, var(--paper) 1px, transparent 1px);
+    background-size:56px 56px;
+    mask-image:radial-gradient(ellipse at 70% 30%, black 0%, transparent 72%);
+  }
+  .hero .wrap{position:relative; z-index:2;}
+  .hero .eyebrow{color:var(--brass); margin-bottom:26px;}
+  .hero .eyebrow::before{background:var(--brass);}
+  .hero h1{
+    font-size:clamp(38px,5.4vw,68px);
+    max-width:16ch;
+    color:var(--white);
+  }
+  .hero h1 em{font-style:italic; color:var(--brass);}
+  .hero .sub{
+    margin-top:22px; max-width:46ch;
+    font-size:17px; color:rgba(241,243,238,0.72);
+  }
+  .hero .cta-row{display:flex; gap:14px; margin-top:40px; flex-wrap:wrap;}
+  .btn{
+    font-family:var(--mono); font-size:12.5px; letter-spacing:0.04em;
+    padding:14px 22px; border-radius:2px; display:inline-block;
+    transition:transform .15s ease;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn-primary{background:var(--brass); color:var(--ink);}
+  .btn-ghost{border:1px solid var(--line-dark); color:var(--paper);}
+  .btn-ghost:hover{border-color:var(--brass);}
+
+  .hero-stat{
+    margin-top:64px; padding-top:36px; border-top:1px solid var(--line-dark);
+    display:flex; align-items:flex-end; gap:22px; flex-wrap:wrap;
+  }
+  .hero-stat .num{
+    font-family:var(--mono); font-size:clamp(40px,6vw,64px); font-weight:500;
+    color:var(--white); line-height:1;
+  }
+  .hero-stat .num span{color:var(--brass); font-size:0.55em; vertical-align:middle;}
+  .hero-stat .cap{max-width:30ch; font-size:13.5px; color:rgba(241,243,238,0.6); padding-bottom:6px;}
+
+  /* ---------- SECTION SCAFFOLD ---------- */
+  section{padding:104px 0;}
+  @media(max-width:640px){section{padding:72px 0;}}
+  .section-head{max-width:640px; margin-bottom:56px;}
+  .section-head h2{font-size:clamp(28px,3.6vw,42px); margin-top:16px;}
+  .section-head p{margin-top:16px; color:var(--stone); font-size:16px; max-width:56ch;}
+
+  .reveal{opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  /* ---------- MANDATE CHIPS ---------- */
+  .mandate{background:var(--white); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .chip-row{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); margin-top:8px;}
+  .chip{background:var(--paper); padding:28px 24px;}
+  .chip .k{font-family:var(--mono); font-size:11px; color:var(--brass-dim); letter-spacing:0.06em;}
+  .chip .v{margin-top:10px; font-size:15px; color:var(--ink); line-height:1.45;}
+  @media(max-width:760px){.chip-row{grid-template-columns:1fr;}}
+
+  /* ---------- PHILOSOPHY / TABLE ---------- */
+  .philosophy-grid{display:grid; grid-template-columns:0.9fr 1.1fr; gap:64px; align-items:start;}
+  @media(max-width:860px){.philosophy-grid{grid-template-columns:1fr; gap:40px;}}
+  .philosophy-grid p{color:var(--stone); font-size:15.5px; margin-top:16px;}
+  table.compare{width:100%; border-collapse:collapse; font-size:14.5px;}
+  table.compare th{
+    text-align:left; font-family:var(--mono); font-size:11px; letter-spacing:0.06em;
+    text-transform:uppercase; color:var(--stone); padding:0 16px 14px; font-weight:500;
+  }
+  table.compare th:first-child{padding-left:0;}
+  table.compare td{padding:18px 16px; border-top:1px solid var(--line); vertical-align:top;}
+  table.compare td:first-child{padding-left:0; font-family:var(--mono); font-size:12.5px; color:var(--ink); white-space:nowrap;}
+  table.compare td.typical{color:var(--stone);}
+  table.compare td.ours{color:var(--ink); position:relative;}
+  table.compare td.ours::before{content:"→"; color:var(--brass-dim); margin-right:8px;}
+  table.compare tr:last-child td{border-bottom:1px solid var(--line);}
+
+  /* ---------- SPEND / SIGNATURE ---------- */
+  .spend{background:var(--ink); color:var(--paper);}
+  .spend .section-head h2, .spend .eyebrow{color:var(--white);}
+  .spend .eyebrow{color:var(--brass);}
+  .spend .eyebrow::before{background:var(--brass);}
+  .spend .section-head p{color:rgba(241,243,238,0.62);}
+
+  /* ---------- MARKETING FUNNEL ---------- */
+  .funnel-layout{display:grid; grid-template-columns:1fr 1fr; gap:56px;}
+  @media(max-width:860px){.funnel-layout{grid-template-columns:1fr; gap:44px;}}
+
+  .funnel-track-head{display:flex; align-items:center; gap:10px; margin-bottom:22px;}
+  .funnel-dot{width:10px; height:10px; border-radius:50%;}
+  .funnel-track-head h3{font-family:var(--body); font-weight:600; font-size:15px; letter-spacing:0.03em; text-transform:uppercase; color:var(--white);}
+
+  .funnel-step{
+    width:var(--w);
+    background:var(--ink-soft);
+    border:1px solid var(--line-dark);
+    border-radius:2px;
+    padding:18px 22px;
+    margin-bottom:10px;
+    transition:width .2s ease;
+  }
+  .funnel-step:hover{border-color:var(--brass-dim);}
+  .funnel-final{background:transparent; border-style:dashed;}
+  .fs-top{display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap;}
+  .fs-label{font-family:var(--mono); font-size:12px; color:var(--brass); letter-spacing:0.03em;}
+  .fs-tag{font-family:var(--mono); font-size:10.5px; color:var(--stone); letter-spacing:0.04em; text-transform:uppercase;}
+  .funnel-step p{font-size:13.5px; color:rgba(241,243,238,0.72); margin-top:8px; line-height:1.5;}
+  .funnel-final p{color:rgba(241,243,238,0.55); font-size:13px;}
+  @media(max-width:640px){.funnel-step{width:100% !important;}}
+
+  /* ---------- LANDING PAGE ---------- */
+  .lp{background:var(--white); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .lp-layout{display:grid; grid-template-columns:1fr 1fr; gap:70px; align-items:center;}
+  @media(max-width:860px){.lp-layout{grid-template-columns:1fr; gap:40px;}}
+  .lp-copy p{color:var(--stone); font-size:15.5px; margin-top:16px; max-width:52ch;}
+  .lp-stats{display:flex; flex-direction:column; gap:0;}
+  .lp-stat{padding:22px 0; border-top:1px solid var(--line);}
+  .lp-stat:last-child{border-bottom:1px solid var(--line);}
+  .lp-stat .n{font-family:var(--mono); font-size:32px; color:var(--green);}
+  .lp-stat .c{font-size:13.5px; color:var(--stone); margin-top:4px; max-width:40ch;}
+
+  /* ---------- PROCESS ---------- */
+  .process-row{display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--line);}
+  .process-row .step{padding:32px 24px 0; border-left:1px solid var(--line);}
+  .process-row .step:first-child{border-left:none; padding-left:0;}
+  @media(max-width:860px){.process-row{grid-template-columns:1fr;} .process-row .step{border-left:none; border-top:1px solid var(--line); padding:28px 0 0;} .process-row .step:first-child{border-top:none;}}
+  .step .idx{font-family:var(--mono); font-size:12px; color:var(--brass-dim);}
+  .step h3{font-size:19px; margin-top:14px; font-weight:500;}
+  .step p{font-size:14px; color:var(--stone); margin-top:10px; max-width:32ch;}
+
+  /* ---------- WHY US ---------- */
+  .why{background:var(--paper-dim);}
+  .why-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
+  @media(max-width:760px){.why-grid{grid-template-columns:1fr;}}
+  .why-card{background:var(--paper-dim); padding:36px;}
+  .why-card .idx{font-family:var(--mono); font-size:12px; color:var(--brass-dim);}
+  .why-card h3{font-size:20px; margin-top:14px;}
+  .why-card p{font-size:14.5px; color:var(--stone); margin-top:12px; max-width:42ch;}
+
+  /* ---------- SCALE FURTHER ---------- */
+  .scale-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
+  @media(max-width:900px){.scale-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:560px){.scale-grid{grid-template-columns:1fr;}}
+  .scale-card{background:var(--white); padding:26px 22px; min-height:170px; display:flex; flex-direction:column; justify-content:space-between;}
+  .scale-card .tag{font-family:var(--mono); font-size:10px; letter-spacing:0.06em; color:var(--green-soft); text-transform:uppercase;}
+  .scale-card h4{font-size:15.5px; margin-top:14px; font-weight:600; font-family:var(--body);}
+  .scale-card p{font-size:12.5px; color:var(--stone); margin-top:8px;}
+
+  footer{padding:34px 0; border-top:1px solid var(--line-dark); background:var(--ink);}
+  footer .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;}
+  footer p{font-family:var(--mono); font-size:11.5px; color:rgba(241,243,238,0.5);}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">CORE8<span>MEDIA</span></div>
+    <div class="navlinks">
+      <a href="#mandate">The Mandate</a>
+      <a href="#philosophy">The Numbers</a>
+      <a href="#funnel">The Funnel</a>
+      <a href="#process">Process</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="blueprint"></div>
+  <div class="wrap">
+    <div class="eyebrow">Meta &amp; Google Ads · Vista Villas, Bellandur</div>
+    <h1>Turning villa listings into <em>qualified</em> buyers</h1>
+    <p class="sub">A performance-first paid media engine for premium real estate — Meta and Google campaigns engineered around lead quality, not just volume, built on what worked for Vista Villas, Bellandur.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#funnel">See the funnel</a>
+      <a class="btn btn-ghost" href="#process">How we work</a>
+    </div>
+    <div class="hero-stat">
+      <div class="num">₹150<span>–250</span></div>
+      <div class="cap">Cost per qualified lead — held consistently across the Meta &amp; Google campaign for a ₹2.5 Cr+ villa product.</div>
+    </div>
+  </div>
+</header>
+
+<section class="mandate" id="mandate">
+  <div class="wrap reveal">
+    <div class="eyebrow">The mandate</div>
+    <h2 style="margin-top:16px; font-size:clamp(24px,3vw,34px);">A premium villa project, run purely on paid performance</h2>
+    <p style="margin-top:14px; color:var(--stone); max-width:60ch;">Bellandur, Bangalore — a paid lead-generation mandate covering Meta and Google campaigns, a dedicated landing page, and always-on retargeting for warm leads.</p>
+    <div class="chip-row">
+      <div class="chip"><div class="k">CHANNELS</div><div class="v">Meta &amp; Google performance campaigns, run and optimised in parallel</div></div>
+      <div class="chip"><div class="k">FUNNEL</div><div class="v">Landing page + funnel optimisation built specifically for ad quality score and lead capture</div></div>
+      <div class="chip"><div class="k">RETENTION</div><div class="v">Always-on retargeting for warm leads and site visitors, layered on both platforms</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="philosophy">
+  <div class="wrap reveal">
+    <div class="section-head">
+      <div class="eyebrow">Our philosophy</div>
+      <h2>Villas aren't sold on volume.<br>They're sold on fit.</h2>
+      <p>A ₹2.5 Cr+ villa is a considered, high-trust purchase. Cheap, unqualified clicks waste a sales team's time and inflate cost-per-sale even when cost-per-lead looks low. We build every Meta and Google campaign around the metric that actually predicts a site visit and a closed deal.</p>
+    </div>
+    <div class="philosophy-grid">
+      <div>
+        <div class="eyebrow" style="margin-bottom:0;">Why it matters</div>
+        <p>Broad-reach campaigns optimised for clicks fill a CRM with names that never answer the phone. Every setting below — targeting, creative, bidding, funnel — is chosen instead to protect lead quality, because on a villa-sized ticket, one real buyer is worth more than a hundred curious ones.</p>
+      </div>
+      <table class="compare">
+        <thead>
+          <tr><th></th><th>Typical Meta/Google setup</th><th>Our approach</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Targeting</td><td class="typical">Broad reach, maximum clicks</td><td class="ours">Intent signals matched to villa-buyer profiles</td></tr>
+          <tr><td>Creative</td><td class="typical">Generic property ad units</td><td class="ours">Lifestyle- and walkthrough-led creative, boosted as paid media</td></tr>
+          <tr><td>Optimisation goal</td><td class="typical">Lowest cost-per-click</td><td class="ours">Lowest cost-per-qualified-lead (₹150–250)</td></tr>
+          <tr><td>Funnel</td><td class="typical">One-size-fits-all lead form</td><td class="ours">Pre-qualifying landing page &amp; follow-up flow</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="spend" id="funnel">
+  <div class="wrap reveal">
+    <div class="section-head">
+      <div class="eyebrow">The marketing funnel</div>
+      <h2>Two platforms, one qualified lead</h2>
+      <p>Meta and Google run as parallel, purpose-built funnels — each engineered around villa-buyer intent, and each converging on the same pre-qualified enquiry.</p>
+    </div>
+
+    <div class="funnel-layout">
+      <div class="funnel-track">
+        <div class="funnel-track-head">
+          <div class="funnel-dot" style="background:#c9a15a;"></div>
+          <h3>Meta Ads</h3>
+        </div>
+        <div class="funnel-step" style="--w:100%;">
+          <div class="fs-top"><span class="fs-label">01 · Reach</span><span class="fs-tag">Instagram &amp; Facebook</span></div>
+          <p>Lifestyle &amp; walkthrough creative served to villa-buyer and lookalike audiences.</p>
+        </div>
+        <div class="funnel-step" style="--w:82%;">
+          <div class="fs-top"><span class="fs-label">02 · Engage</span><span class="fs-tag">Retargeting</span></div>
+          <p>Warm engagers and site visitors re-served ads to move them toward enquiry.</p>
+        </div>
+        <div class="funnel-step" style="--w:64%;">
+          <div class="fs-top"><span class="fs-label">03 · Capture</span><span class="fs-tag">OTP-Verified Lead Form</span></div>
+          <p>Native Meta lead form with OTP verification — every submission is a real, contactable buyer, filtered before it ever reaches sales.</p>
+        </div>
+        <div class="funnel-step funnel-final" style="--w:48%;">
+          <div class="fs-top"><span class="fs-label">04 · Qualified Lead</span></div>
+          <p>Verified contact, routed straight into follow-up.</p>
+        </div>
+      </div>
+
+      <div class="funnel-track">
+        <div class="funnel-track-head">
+          <div class="funnel-dot" style="background:#3f6350;"></div>
+          <h3>Google Ads</h3>
+        </div>
+        <div class="funnel-step" style="--w:100%;">
+          <div class="fs-top"><span class="fs-label">01 · Intent</span><span class="fs-tag">Search Ads</span></div>
+          <p>High-intent terms like "villas in Bellandur" caught at the moment of active search.</p>
+        </div>
+        <div class="funnel-step" style="--w:82%;">
+          <div class="fs-top"><span class="fs-label">02 · Extend Reach</span><span class="fs-tag">Performance Max</span></div>
+          <p>Search, Display &amp; YouTube inventory bid automatically toward the same lead-quality goal.</p>
+        </div>
+        <div class="funnel-step" style="--w:64%;">
+          <div class="fs-top"><span class="fs-label">03 · Convert</span><span class="fs-tag">Landing Page</span></div>
+          <p>All traffic lands on the dedicated project page — floor plans, pricing band, short enquiry form.</p>
+        </div>
+        <div class="funnel-step funnel-final" style="--w:48%;">
+          <div class="fs-top"><span class="fs-label">04 · Qualified Lead</span></div>
+          <p>Conversion tracked to lead quality, not just clicks.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="lp">
+  <div class="wrap reveal">
+    <div class="lp-layout">
+      <div class="lp-copy">
+        <div class="eyebrow">Investment plan · continued</div>
+        <h2 style="margin-top:16px; font-size:clamp(26px,3.4vw,38px);">A landing page, built and hosted for Google Ads</h2>
+        <p>Search and Performance Max traffic needs a page built to convert — not a generic project website. We design, build and host a single-property landing page: floor plans, pricing band, gallery and a short enquiry form, optimised specifically for Google Ads quality score and lead capture. It stays live and is updated for the duration of the campaign.</p>
+      </div>
+      <div class="lp-stats">
+        <div class="lp-stat"><div class="n">200–330</div><div class="c">Estimated qualified leads per month at ₹150–250 CPL</div></div>
+        <div class="lp-stat"><div class="n">Weekly</div><div class="c">Optimisation &amp; budget rebalancing cadence across Meta and Google</div></div>
+        <div class="lp-stat"><div class="n">48 Hrs</div><div class="c">Turnaround on a channel plan for a new project</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap reveal">
+    <div class="section-head">
+      <div class="eyebrow">How we work</div>
+      <h2>From brief to booked site visit</h2>
+      <p>Four stages, run in sequence for every new project — each one feeding directly into the Meta and Google campaigns that follow.</p>
+    </div>
+    <div class="process-row">
+      <div class="step"><div class="idx">01</div><h3>Discovery &amp; Audit</h3><p>Understand the project, price point, and buyer profile; audit current lead quality.</p></div>
+      <div class="step"><div class="idx">02</div><h3>Strategy</h3><p>Set the Meta/Google channel split, creative direction, and target CPL for the project.</p></div>
+      <div class="step"><div class="idx">03</div><h3>Performance Execution</h3><p>Launch and manage paid campaigns across Meta and Google — landing page live before spend starts.</p></div>
+      <div class="step"><div class="idx">04</div><h3>Optimise &amp; Report</h3><p>Weekly optimisation against CPL and lead-quality targets, with transparent reporting.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap reveal">
+    <div class="section-head">
+      <div class="eyebrow">Why partner with us</div>
+      <h2>Meta &amp; Google, run by real estate specialists</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="idx">01</div>
+        <h3>Category specialists</h3>
+        <p>Every campaign is built around how villas and premium homes actually get bought — not a generic e-commerce playbook ported onto real estate.</p>
+      </div>
+      <div class="why-card">
+        <div class="idx">02</div>
+        <h3>Proven CPL discipline</h3>
+        <p>Vista Villas, Bellandur held a ₹150–250 cost-per-qualified-lead on Meta and Google — a benchmark we carry into every new project.</p>
+      </div>
+      <div class="why-card">
+        <div class="idx">03</div>
+        <h3>One accountable team</h3>
+        <p>Paid media strategy, campaign execution and landing pages, handled by a single team — not split across separate ad and web vendors.</p>
+      </div>
+      <div class="why-card">
+        <div class="idx">04</div>
+        <h3>Transparent reporting</h3>
+        <p>Clear, regular visibility into spend, lead volume, CPL, and lead quality across both platforms — no black-box dashboards.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="scale">
+  <div class="wrap reveal">
+    <div class="section-head">
+      <div class="eyebrow">Where the budget can go further</div>
+      <h2>What can be added as the project scales</h2>
+      <p>Levers we layer onto the same Meta and Google foundation once a project is ready to scale.</p>
+    </div>
+    <div class="scale-grid">
+      <div class="scale-card">
+        <div>
+          <div class="tag">Lead Capture</div>
+          <h4>OTP-verified Meta lead forms</h4>
+        </div>
+        <p>Native Meta lead forms with OTP verification, so every submission is a real, contactable buyer before it reaches sales.</p>
+      </div>
+      <div class="scale-card">
+        <div>
+          <div class="tag">Targeting</div>
+          <h4>Geo-fencing near rival sites</h4>
+        </div>
+        <p>Serve ads to people physically visiting competing project site offices and sample flats nearby.</p>
+      </div>
+      <div class="scale-card">
+        <div>
+          <div class="tag">Conversion</div>
+          <h4>A/B tested landing pages</h4>
+        </div>
+        <p>Run two landing page versions against each other and shift Google traffic to the stronger converter.</p>
+      </div>
+      <div class="scale-card">
+        <div>
+          <div class="tag">Operations</div>
+          <h4>CRM &amp; lead-tracking integration</h4>
+        </div>
+        <p>Leads pushed directly into the developer's CRM or sales tracker with source and channel tagged.</p>
+      </div>
+      <div class="scale-card">
+        <div>
+          <div class="tag">Reach</div>
+          <h4>Lookalike audience expansion</h4>
+        </div>
+        <p>Once qualified leads reach volume, build lookalikes on Meta to extend reach without diluting lead quality.</p>
+      </div>
+      <div class="scale-card">
+        <div>
+          <div class="tag">Trust</div>
+          <h4>NRI / long-distance buyer track</h4>
+        </div>
+        <p>A separate Meta &amp; Google creative and landing page track for overseas buyers, with time-zone-matched follow-up.</p>
+      </div>
+      <div class="scale-card">
+        <div>
+          <div class="tag">Sales enablement</div>
+          <h4>Site-visit scheduling flow</h4>
+        </div>
+        <p>Calendar-linked booking built into the landing page so a qualified lead can lock a slot immediately.</p>
+      </div>
+      <div class="scale-card">
+        <div>
+          <div class="tag">Visibility</div>
+          <h4>Local SEO for the project name</h4>
+        </div>
+        <p>The landing page is structured to also rank organically for the project's own name and micro-location, reinforcing paid traffic.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>VISTA VILLAS, BELLANDUR — META &amp; GOOGLE ADS PORTFOLIO · CORE8MEDIA</p>
+    <p>13 AUGUST 2026</p>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
